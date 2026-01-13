@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "source": "SFAR - RFE Antibioprophylaxie 2024",
+    "version": "2.0",
+    "url_source": "https://sfar.org/download/antibioprophylaxie-en-chirurgie-et-medecine-interventionnelle/",
+    "date_extraction": "2026-01-13T00:00:00",
+    "total_records": 8,
+    "specialites": [
+      "Chirurgie digestive",
+      "Chirurgie orthopédique",
+      "Chirurgie urologique"
+    ],
+    "notes": "Exemple de structure - données partielles pour illustration"
+  },
+  "recommandations_generales": {
+    "timing": {
+      "description": "Administration au plus tôt 60 min avant, au plus tard avant l'incision",
+      "grade": "GRADE 1",
+      "reference": "R1.1"
+    },
+    "vancomycine": {
+      "description": "Début perfusion 60-30 min avant incision, durée 60 min",
+      "grade": "Avis d'experts",
+      "reference": "R1.2"
+    },
+    "reinjection": {
+      "description": "Réadministrer toutes les 2 demi-vies",
+      "intervalles": {
+        "cefoxitine": "2h (dose: 1g)",
+        "cefuroxime": "2h (dose: 0.75g)",
+        "amoxicilline_clavulanate": "2h (dose: 1g)",
+        "cefazoline": "4h (dose: 1g)",
+        "clindamycine": "4h (dose: 450mg)",
+        "vancomycine": "8h (dose: 10mg/kg)"
+      },
+      "grade": "GRADE 2",
+      "reference": "R1.3"
+    },
+    "duree": {
+      "description": "Pas de prolongation au-delà de la fin de chirurgie (sauf exceptions)",
+      "grade": "GRADE 1",
+      "reference": "R1.4"
+    }
+  },
+  "data": [
+    {
+      "specialite": "Chirurgie orthopédique",
+      "acte": "Prothèse totale de hanche",
+      "antibiotique": "Céfazoline",
+      "posologie": "2g IV",
+      "alternative_allergie": "Vancomycine 15mg/kg",
+      "reinjection": "1g toutes les 4h si chirurgie prolongée",
+      "duree": "Dose unique",
+      "grade": "GRADE 1",
+      "commentaire": null
+    },
+    {
+      "specialite": "Chirurgie orthopédique",
+      "acte": "Prothèse totale de genou",
+      "antibiotique": "Céfazoline",
+      "posologie": "2g IV",
+      "alternative_allergie": "Vancomycine 15mg/kg",
+      "reinjection": "1g toutes les 4h si chirurgie prolongée",
+      "duree": "Dose unique",
+      "grade": "GRADE 1",
+      "commentaire": null
+    },
+    {
+      "specialite": "Chirurgie orthopédique",
+      "acte": "Arthrodèse rachidienne avec matériel",
+      "antibiotique": "Céfazoline",
+      "posologie": "2g IV",
+      "alternative_allergie": "Vancomycine 15mg/kg + Gentamicine 5mg/kg",
+      "reinjection": "1g toutes les 4h",
+      "duree": "Dose unique",
+      "grade": "GRADE 1",
+      "commentaire": null
+    },
+    {
+      "specialite": "Chirurgie digestive",
+      "acte": "Chirurgie colorectale programmée",
+      "antibiotique": "Céfoxitine",
+      "posologie": "2g IV",
+      "alternative_allergie": "Métronidazole 1g + Gentamicine 5mg/kg",
+      "reinjection": "1g toutes les 2h",
+      "duree": "Dose unique",
+      "grade": "GRADE 1",
+      "commentaire": "Préparation colique orale optionnelle: Tobramycine + Métronidazole PO la veille"
+    },
+    {
+      "specialite": "Chirurgie digestive",
+      "acte": "Cholécystectomie",
+      "antibiotique": "Pas d'antibioprophylaxie",
+      "posologie": "-",
+      "alternative_allergie": "-",
+      "reinjection": null,
+      "duree": null,
+      "grade": "GRADE 1",
+      "commentaire": "Sauf cholécystite aiguë = antibiothérapie curative"
+    },
+    {
+      "specialite": "Chirurgie digestive",
+      "acte": "Appendicectomie (appendicite non compliquée)",
+      "antibiotique": "Céfoxitine",
+      "posologie": "2g IV",
+      "alternative_allergie": "Métronidazole 1g + Gentamicine 5mg/kg",
+      "reinjection": null,
+      "duree": "Dose unique",
+      "grade": "GRADE 1",
+      "commentaire": null
+    },
+    {
+      "specialite": "Chirurgie urologique",
+      "acte": "Prostatectomie radicale",
+      "antibiotique": "Céfazoline",
+      "posologie": "2g IV",
+      "alternative_allergie": "Vancomycine 15mg/kg",
+      "reinjection": "1g toutes les 4h si chirurgie prolongée",
+      "duree": "Dose unique",
+      "grade": "GRADE 2",
+      "commentaire": null
+    },
+    {
+      "specialite": "Chirurgie urologique",
+      "acte": "Néphrectomie",
+      "antibiotique": "Céfazoline",
+      "posologie": "2g IV",
+      "alternative_allergie": "Vancomycine 15mg/kg",
+      "reinjection": "1g toutes les 4h",
+      "duree": "Dose unique",
+      "grade": "Avis d'experts",
+      "commentaire": null
+    }
+  ],
+  "index": {
+    "par_specialite": {
+      "Chirurgie orthopédique": [0, 1, 2],
+      "Chirurgie digestive": [3, 4, 5],
+      "Chirurgie urologique": [6, 7]
+    },
+    "par_antibiotique": {
+      "Céfazoline": [0, 1, 2, 6, 7],
+      "Céfoxitine": [3, 5],
+      "Pas d'antibioprophylaxie": [4]
+    }
+  }
+}
