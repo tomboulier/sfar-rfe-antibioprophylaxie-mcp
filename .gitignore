@@ -29,6 +29,9 @@ htmlcov/
 dist/
 build/
 
+# Generated API files (CI)
+public/
+
 # Données sensibles
 *.pdf
 data/*.json
