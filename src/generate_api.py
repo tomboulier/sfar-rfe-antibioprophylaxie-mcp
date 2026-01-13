@@ -195,13 +195,13 @@ def generate_search_index(data: dict[str, Any], output_dir: Path) -> None:
     for idx, rec in enumerate(data["data"]):
         entry = {
             "id": idx,
-            "specialite": rec["specialite"],
-            "specialite_slug": slugify(rec["specialite"]),
-            "acte": rec["acte"],
-            "antibiotique": rec["antibiotique"],
-            "posologie": rec["posologie"],
-            "grade": rec["grade"],
-            "searchable_text": f"{rec['specialite']} {rec['acte']} {rec['antibiotique']}".lower(),
+            "specialite": rec.get("specialite", ""),
+            "specialite_slug": slugify(rec.get("specialite", "")),
+            "acte": rec.get("acte", ""),
+            "antibiotique": rec.get("antibiotique", ""),
+            "posologie": rec.get("posologie", ""),
+            "grade": rec.get("grade", ""),
+            "searchable_text": f"{rec.get('specialite', '')} {rec.get('acte', '')} {rec.get('antibiotique', '')}".lower(),
         }
         search_entries.append(entry)
 
@@ -219,9 +219,14 @@ def generate_search_index(data: dict[str, Any], output_dir: Path) -> None:
     print(f"✓ Généré: {output_file}")
 
 
-def generate_index_html(data: dict[str, Any], output_dir: Path) -> None:
+def generate_index_html(data: dict[str, Any], output_dir: Path, base_dir: Path) -> None:
     """
     Génère la page index.html avec la documentation de l'API.
+
+    Args:
+        data: Les données source
+        output_dir: Le répertoire de sortie pour l'API (api/v1)
+        base_dir: Le répertoire de base du projet
     """
     base_url = get_base_url()
     metadata = data["metadata"]
@@ -612,7 +617,9 @@ curl {base_url}/api/v1/specialite/chirurgie-orthopedique.json
 </html>
 """
 
-    output_file = output_dir.parent.parent / "index.html"
+    # Pass base_dir to the function for clearer path construction
+    public_dir = base_dir / "public"
+    output_file = public_dir / "index.html"
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(html_content)
 
@@ -654,7 +661,7 @@ def main():
 
     # Générer la page HTML
     print("🌐 Génération de la documentation HTML...")
-    generate_index_html(data, output_dir)
+    generate_index_html(data, output_dir, base_dir)
     print()
 
     print("✅ Génération terminée avec succès!")
